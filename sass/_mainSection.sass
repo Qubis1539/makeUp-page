@@ -1,0 +1,517 @@
+
+
+main
+    padding-bottom: 100px
+
+.owl-carousel
+    &:hover .owl-carousel__arrow
+        opacity: 1
+    &__arrow
+        opacity: 0
+        position: absolute
+        top: calc(50% - 14px)
+        width: 12px
+        height: 27px
+        transition: opacity 300ms
+        &--next 
+            right: 40px
+        
+            &:before
+                content: ""
+                display: block
+                width: 4px
+                height: 20px
+                background: #000
+                transition: background 300ms
+                transform: rotate(-45deg) translate(5px)
+                
+            &:after
+                content: ""
+                display: block
+                width: 4px
+                height: 20px
+                background: #000
+                transition: background 300ms
+                transform: rotate(45deg) translateX(-5px) translateY(-10px)
+            &:hover:before, &:hover:after
+                background: $orange   
+        
+        &--back
+            left: 40px
+            &:before
+                content: ""
+                display: block
+                width: 4px
+                height: 20px
+                background: #000
+                transition: background 300ms
+                transform: rotate(45deg) translate(5px) 
+                
+            &:after
+                content: ""
+                display: block
+                width: 4px
+                height: 20px
+                background: #000
+                transition: background 300ms
+                transform: rotate(-45deg) translateX(5px) translateY(0px) 
+            &:hover:before, &:hover:after
+                background: $orange  
+.main-carousel
+    margin-bottom: 50px
+    &__item
+        position: relative
+    &__subtitle
+        font-size: 18px
+        line-height: 20px
+        margin-bottom: 20px
+    &__title
+        font-size: 62px
+        line-height: 70px
+        font-family: $main-font
+        font-weight: 600
+        margin-bottom: 25px
+    &__button
+        position: relative
+        display: inline-block
+        z-index: 2
+        background-color: #272727
+        margin: 0 0 5px
+
+        &:hover a
+            color: #000
+            background-color: transparent
+            text-shadow: nthree
+
+        &:hover:before 
+            left: 0%
+            right: auto
+            width: 100%
+        
+        &:before 
+            display: block
+            position: absolute
+            top: 0px
+            right: 0px
+            height: 100%
+            width: 0px
+            content: ''
+            background: #fff
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s
+            z-index: 0
+        
+    &__btn  
+        transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s
+        display: inline-block
+        margin-top: 5px
+        padding: 12px 29px 
+        
+        color: #ffffff
+        font-size: 16px
+        line-height: 20px
+        font-weight: 600
+        font-family: $main-font
+        float: none
+        width: auto
+        vertical-align: top
+        
+        height: 100%
+        position: relative
+        z-index: 3
+        &:after
+            content: ''
+            background: black
+            height: 1px
+            width: 100%
+            position: absolute
+            left: auto
+            right: 0
+            bottom: -5px
+            transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s
+        &:hover:after
+            background: #fff
+    &__content
+        position: absolute
+        top: auto
+        bottom: 34%
+        margin: auto
+        text-align: center
+        width: 30%
+        float: left
+    &__content1 
+        left: 10%
+        right: auto
+
+    &__content2
+        left: auto
+        right: 16%
+.main-carousel__content2
+    .main-carousel__subtitle
+        color: #fff
+    .main-carousel__title
+        color: #fff
+    .main-carousel__button
+        background-color: #fff
+        &:before
+            background: #000
+    .main-carousel__btn
+            color: #000 
+            &:hover
+                color: #fff
+            &:after
+                background: #fff
+            &:hover:after
+                background: #000
+      
+
+
+.categories
+    text-align: center
+    &__subtitle
+        display: inline-block
+        border: 1px solid #ccc
+        padding: 9px 16px
+        margin: 0 0 15px
+        letter-spacing: 3px
+        text-transform: uppercase
+    &__title
+        font-weight: 600
+        font-size: 36px
+        line-height: 42px
+        font-family: $main-font
+        margin: 0 0 15px
+    &__desc
+        font-weight: 400
+        font-size: 16px
+        line-height: 16px
+        margin: 0 0 30px
+        color: $body-text
+
+.categories-slider
+    margin-bottom: 80px
+    &__image
+        display: block
+        transition: transform 3s ease-out
+        width: 100%
+    &__image a 
+        cursor: default
+        // overflow: hidden
+    &__item
+        margin-left: 15px
+        margin-right: 15px     
+        // width: 325px
+        overflow: hidden
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
+        &:hover .categories-slider__image
+            transform: scale(1.1)
+        &:hover .categories-slider__desc:before
+            animation: zooming 1s ease-in-out alternate infinite
+    &__desc
+        position: absolute
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        &:before
+            content: ""
+            position: absolute
+            display: block
+            align-items: center
+            display: flex
+            align-items: center
+            width: 150px
+            height: 150px
+            border-radius: 50%
+            background: #fff
+            
+    &__link
+        position: relative
+        font-weight: 500
+        font-size: 20px
+        line-height: 24px
+        font-family: $main-font
+        display: inline-block
+        margin: 0 0 5px
+        color: #111
+        &--small
+            color: $body-text
+            font: italic 400 13px/15px $body-font
+           
+    .owl-item.active:nth-child(2n)  
+        margin-top: 50px
+.sub-categories
+    margin-bottom: 80px
+    &__slider
+        border-top: 1px solid #e5e5e5
+        border-bottom: 1px solid #e5e5e5
+    &__img
+        width: 50px !important
+        height: 50px
+        margin-bottom: 20px
+        transition: all 400ms
+        background: #111111
+    &__mart-ico
+        mask-image: url("../images/icons/servies/services-01.png")
+    &__pig-ico
+        mask-image: url("../images/icons/servies/services-02.png")
+    &__sup-ico
+        mask-image: url("../images/icons/servies/services-03.png")
+    &__cash-ico
+        mask-image: url("../images/icons/servies/services-04.png")
+    
+    &__item
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        margin-top: 20px
+        margin-bottom: 20px
+        padding-top: 20px
+        padding-bottom: 20px
+        border-right: 1px solid #e5e5e5
+        &:hover .sub-categories__img
+            transform: translateY(-10px)
+            background: $orange
+        &:hover .sub-categories__title
+            color: $orange
+
+        
+    
+
+    
+    &__title
+        color: #111111
+        font-weight: 700
+        font-size: 16px
+        font-family: $main-font
+        transition: all 400ms ease-in-out 0s
+        margin: 0 0 8px
+    &__subtitle
+        color: #777777
+        font: italic 400 13px/16px $body-font
+    .owl-carousel .active:last-child .sub-categories__item
+        border-right: none
+
+.trendings
+    background: #f1ebe8
+    padding-top: 80px
+    padding-bottom: 80px
+    &__header
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__title
+        font-family: $main-font
+        font-weight: 600
+        font-size: 36px
+
+        margin: 0 0 15px
+        position: relative
+        color: $text
+    .trends-nav-list
+        display: flex
+        align-items: center 
+        &__link
+            color: $body-text
+            font-weight: 500
+            font-size: 14px
+            outline: medium none
+            padding: 8px 20px
+            margin: 0 2px
+    .product
+        display: block
+        margin-right: 15px
+        margin-left: 15px
+        &__img-box1
+            position: relative
+            overflow: hidden
+            display: block
+        
+        &__img-box2
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0  
+            opacity: 0
+            left: -100%
+            transition: all 400ms ease-in-out
+
+        &:hover .product__img-box2
+            left: 0
+            opacity: 1
+        
+        &__btns
+            position: absolute
+            display: flex
+            justify-content: end
+            bottom: 0
+            right: -100%
+            transition: all 400ms ease-in-out
+        &:hover .product__btns
+            right: 0
+        &__btn
+            border: none
+            outline: none
+            background: #fff
+            width: 44px
+            height: 44px
+            display: flex
+            justify-content: center
+            align-items: center
+            position: relative
+            cursor: pointer
+            overflow: hidden
+            &::after
+                content: ""
+                display: block
+                position: absolute
+                z-index: 1
+                right: 0
+                width: 1px
+                height: 45%
+                background: #ccc
+            &:last-child::after
+                content: none
+            // &::before
+            //     content: ""
+            //     display: block
+            //     position: absolute
+            //     top: 0
+            //     left: 0
+            //     width: 0
+            //     height: 100%
+            //     background: #111
+            //     transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s
+            // &:hover::before
+            //     width: 100%
+            //     right: auto
+            
+        
+            &:before 
+                display: block
+                position: absolute
+                z-index: 2
+                top: 0px
+                right: 0px
+                height: 100%
+                width: 0px
+                content: ''
+                background: #111
+                transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1) 0s
+                z-index: 0
+            &:hover:before 
+                left: 0%
+                right: auto
+                width: 100%
+            &:hover svg
+                fill: white
+        &__btn-ico
+            position: relative
+            z-index: 3
+            display: block
+            width: 20px !important
+            svg
+                width: 20px
+                fill: #111
+                transition: all 0.4s ease-in-out
+        
+        &__desc
+            position: relative
+            padding-top: 15px
+            overflow: hidden
+        &__title
+            font-weight: 400
+            font-size: 14px
+            text-overflow: ellipsis
+            overflow: hidden
+            color: #555555
+            transition: all 400ms ease-in-out 0s
+            margin-bottom: 10px
+        &__color-size
+            display: flex
+            align-items: center
+            margin-bottom: 10px
+        &__radio
+            display: none
+            
+                
+            
+        &__color
+            display: flex
+            align-items: center
+            margin-right: 8px
+
+        &__color-circle
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            margin-right: 8px
+            transition: all 0.4s
+            &--red
+                background: red
+            &--pink
+                background: pink
+        &__color input[type="radio"]:checked+label 
+            transform: scale(1.2) !important
+
+        &__size
+            color: $body-text
+            font-weight: bold
+        &__sizes input[type="radio"]:checked+label 
+            color: $text !important
+        
+        &__price
+            font-weight: 700
+            font-size: 15px
+            color: $text  
+            position: relative
+            left: 0
+            transition: all 600ms ease-in-out
+        &__discount
+            color: #ff0000
+        &__price-difference
+            font-weight: 500
+            font-size: 13px
+            color: $body-text
+            text-decoration: line-through
+
+        &__cart-box
+            height: 10px
+            display: flex
+            justify-content: space-between
+            align-items: center
+            button
+                border: none
+                outline: none
+        &__add-to-cart
+            position: absolute
+            left: -100%
+            bottom: 10px
+            transition: all 400ms ease-in-out
+            background: none
+        &__value-box
+            position: absolute
+            right: -100%
+            bottom: 0px
+            display: flex
+            transition: all 400ms ease-in-out
+            div, button
+                width: 30px
+                height: 40px
+                display: block
+                background: #fff
+                display: flex
+                justify-content: center
+                align-items: center
+        &:hover .product__add-to-cart
+            left: 0
+        &:hover .product__value-box
+            right: 0
+        &:hover .product__price
+            left: 100%
+            opacity: 0
+// разберись с классами полная хуйня
